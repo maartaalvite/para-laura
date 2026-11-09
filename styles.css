@@ -359,8 +359,9 @@ img {
 
 .photo-stack {
   position: relative;
-  width: min(72vw, 330px);
-  height: min(33vh, 310px);
+  flex-shrink: 0;
+  width: min(78vw, 360px);
+  height: min(34vh, 270px);
   margin: 6px 0 10px;
 }
 
@@ -379,17 +380,17 @@ img {
 }
 
 .photo-card--back {
-  inset: 8% auto auto -1%;
-  width: 62%;
-  height: 82%;
-  transform: rotate(-8deg);
+  inset: 5% auto auto 0;
+  width: 52%;
+  height: 92%;
+  transform: rotate(-6deg);
 }
 
 .photo-card--front {
-  inset: 2% -1% auto auto;
-  width: 72%;
-  height: 94%;
-  transform: rotate(5deg);
+  inset: 1% 0 auto auto;
+  width: 64%;
+  height: 96%;
+  transform: rotate(4deg);
 }
 
 .photo-card--front img {
@@ -876,6 +877,7 @@ img {
 
   .photo-stack {
     width: 350px;
+    height: 290px;
   }
 
   .answer-button--no.is-running {
@@ -893,12 +895,26 @@ img {
     font-size: clamp(2.2rem, 9.5vw, 3.6rem);
   }
 
+  .scene--cover h1 {
+    font-size: clamp(1.95rem, 8.4vw, 3rem);
+    line-height: 1;
+  }
+
+  .cover-copy .intro {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
   .scene h2 {
     font-size: clamp(1.75rem, 7vw, 3rem);
   }
 
   .photo-stack {
-    height: 27vh;
+    width: min(78vw, 310px);
+    height: min(34vh, 235px);
+    margin-top: 4px;
+    margin-bottom: 6px;
   }
 
   .memory-photo--portrait {
