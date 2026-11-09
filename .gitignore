@@ -1,0 +1,12 @@
+# Credenciales locales: nunca deben entrar en el repositorio.
+claves
+claves.*
+
+# Archivos del sistema y editores.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Fotos originales. La web usa copias optimizadas en assets/photos.
+imagenes/

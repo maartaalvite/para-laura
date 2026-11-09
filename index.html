@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7dce4" />
+    <meta
+      name="description"
+      content="Una pequeña historia hecha con mucho cariño para Laura."
+    />
+    <meta property="og:title" content="Para Laura, con cariño" />
+    <meta property="og:description" content="Tengo algo importante que preguntarte..." />
+    <meta property="og:image" content="assets/photos/nuestra-noche.jpg" />
+    <title>Para Laura 💌</title>
+    <link rel="preload" as="image" href="assets/photos/nuestra-noche.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <span class="ambient__shape ambient__shape--one"></span>
+      <span class="ambient__shape ambient__shape--two"></span>
+      <span class="ambient__shape ambient__shape--three"></span>
+    </div>
+
+    <main class="story" aria-label="Una historia para Laura">
+      <header class="story__header">
+        <button class="icon-button" id="backButton" type="button" aria-label="Volver a la página anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <div class="progress" aria-label="Progreso de la historia">
+          <div class="progress__track"><span class="progress__bar" id="progressBar"></span></div>
+          <span class="progress__label" id="progressLabel">1 de 8</span>
+        </div>
+
+        <span class="tiny-heart" aria-hidden="true">♥</span>
+      </header>
+
+      <div class="slides" id="slides">
+        <section class="scene scene--cover is-active" data-scene="0" aria-labelledby="cover-title">
+          <div class="cover-copy scene__copy">
+            <p class="eyebrow">Una cosita para ti</p>
+            <h1 id="cover-title">Laura,<br />he preparado esto<br /><em>pensando en ti.</em></h1>
+            <p class="intro">No tardarás mucho en verlo, pero yo llevaba tiempo queriendo decírtelo.</p>
+          </div>
+
+          <div class="photo-stack" aria-label="Dos fotos nuestras">
+            <figure class="photo-card photo-card--back">
+              <img src="assets/photos/espejo-sol.jpg" alt="Las dos juntas frente a un espejo" />
+            </figure>
+            <figure class="photo-card photo-card--front">
+              <img src="assets/photos/nuestra-noche.jpg" alt="Las dos abrazadas en una noche especial" />
+              <figcaption>nosotras ✦</figcaption>
+            </figure>
+          </div>
+
+          <button class="primary-button" type="button" data-next>
+            Abrir esto
+            <span aria-hidden="true">💌</span>
+          </button>
+          <p class="swipe-hint">también puedes deslizar</p>
+        </section>
+
+        <section class="scene scene--memory scene--sun" data-scene="1" aria-labelledby="sun-title" inert>
+          <div class="tape-label" aria-hidden="true">un poquito de nosotras</div>
+          <figure class="memory-photo memory-photo--portrait">
+            <img src="assets/photos/espejo-sol.jpg" alt="Nosotras reflejadas en un espejo al sol" loading="lazy" />
+          </figure>
+          <div class="scene__copy scene__copy--bottom">
+            <p class="eyebrow">Sin hacer demasiado ruido...</p>
+            <h2 id="sun-title">Te convertiste en mi parte favorita de cualquier plan.</h2>
+            <p>Porque da igual dónde estemos: contigo todo se siente un poquito más bonito.</p>
+          </div>
+          <button class="next-link" type="button" data-next>Seguir <span aria-hidden="true">→</span></button>
+        </section>
+
+        <section class="scene scene--memory scene--sage" data-scene="2" aria-labelledby="calm-title" inert>
+          <div class="scene__copy scene__copy--top">
+            <p class="eyebrow">Me gustan nuestros momentos tranquilos</p>
+            <h2 id="calm-title">Los que no necesitan nada especial.</h2>
+          </div>
+          <figure class="memory-photo memory-photo--organic">
+            <img src="assets/photos/siesta-juntas.jpg" alt="Un momento tranquilo juntas en el jardín" loading="lazy" />
+          </figure>
+          <p class="handwritten-note handwritten-note--right">solo tú,<br />yo y calma ♡</p>
+          <button class="next-link" type="button" data-next>Y también... <span aria-hidden="true">→</span></button>
+        </section>
+
+        <section class="scene scene--memory scene--night" data-scene="3" aria-labelledby="night-title" inert>
+          <figure class="memory-photo memory-photo--full">
+            <img src="assets/photos/nuestra-noche.jpg" alt="Nosotras abrazadas en una noche de fiesta" loading="lazy" />
+            <div class="memory-photo__veil"></div>
+          </figure>
+          <div class="scene__copy scene__copy--overlay">
+            <p class="eyebrow">...los que acaban siendo una aventura</p>
+            <h2 id="night-title">Contigo las noches tienen otra luz.</h2>
+            <p>Me encanta reírme contigo, perder la noción del tiempo y acabar guardando recuerdos así.</p>
+          </div>
+          <button class="next-link next-link--light" type="button" data-next>Otro recuerdo <span aria-hidden="true">→</span></button>
+        </section>
+
+        <section class="scene scene--memory scene--lilac" data-scene="4" aria-labelledby="ours-title" inert>
+          <div class="scene__copy scene__copy--top">
+            <p class="eyebrow">Me encanta cómo somos juntas</p>
+            <h2 id="ours-title">La confianza, las risas y hasta nuestras pequeñas locuras.</h2>
+          </div>
+          <div class="double-photo">
+            <figure class="memory-photo double-photo__main">
+              <img src="assets/photos/disfraces.jpg" alt="Nosotras disfrazadas frente al espejo" loading="lazy" />
+            </figure>
+            <figure class="memory-photo double-photo__detail">
+              <img src="assets/photos/beso-disfraz.jpg" alt="Nosotras dándonos un beso" loading="lazy" />
+            </figure>
+          </div>
+          <p class="handwritten-note">mi persona favorita<br />para hacer el tonto ✦</p>
+          <button class="next-link" type="button" data-next>Hay algo más <span aria-hidden="true">→</span></button>
+        </section>
+
+        <section class="scene scene--almost" data-scene="5" aria-labelledby="almost-title" inert>
+          <div class="almost-collage" aria-hidden="true">
+            <img class="almost-collage__one" src="assets/photos/calma.jpg" alt="" loading="lazy" />
+            <img class="almost-collage__two" src="assets/photos/beso-disfraz.jpg" alt="" loading="lazy" />
+            <span class="almost-collage__heart">♥</span>
+          </div>
+          <div class="scene__copy scene__copy--center">
+            <p class="eyebrow">Y entre todos estos momentos...</p>
+            <h2 id="almost-title">Hay algo que tengo muy claro.</h2>
+            <p>Me haces feliz, me importas muchísimo y quiero seguir construyendo recuerdos contigo.</p>
+            <p class="soft-line">Por eso quería preguntártelo de una forma un poco especial.</p>
+          </div>
+          <button class="primary-button primary-button--dark" type="button" data-next>Estoy lista</button>
+        </section>
+
+        <section class="scene scene--question" data-scene="6" aria-labelledby="question-title" inert>
+          <div class="question-sparkles" aria-hidden="true">
+            <span>✦</span><span>♡</span><span>✦</span>
+          </div>
+          <div class="scene__copy scene__copy--center question-copy">
+            <p class="eyebrow">La pregunta importante</p>
+            <h2 id="question-title">Laura,<br /><em>¿quieres salir conmigo?</em></h2>
+            <p>Prometo que darle al «sí» es una decisión estupenda.</p>
+          </div>
+
+          <div class="choice-zone" id="choiceZone" aria-label="Elige una respuesta">
+            <button class="answer-button answer-button--yes" id="yesButton" type="button">Sí, quiero 💗</button>
+            <button class="answer-button answer-button--no" id="noButton" type="button">No</button>
+          </div>
+          <p class="no-message" id="noMessage" aria-live="polite"></p>
+        </section>
+
+        <section class="scene scene--final" data-scene="7" aria-labelledby="final-title" inert>
+          <div class="final-hearts" aria-hidden="true"><span>♥</span><span>♡</span><span>♥</span></div>
+          <figure class="final-photo">
+            <img src="assets/photos/beso-disfraz.jpg" alt="Nosotras dándonos un beso" loading="lazy" />
+          </figure>
+          <div class="scene__copy scene__copy--final">
+            <p class="eyebrow">Mi respuesta favorita</p>
+            <h2 id="final-title">Te quiero, Laura.</h2>
+            <p>
+              No quiero prometerte perfección. Sí quiero prometerte que voy a escucharte, cuidarte,
+              respetarte y tratarte siempre con todo el cariño que mereces.
+            </p>
+            <p class="final-signature">Gracias por elegirme.<br /><span>Lo nuestro acaba de empezar ♡</span></p>
+          </div>
+          <button class="restart-button" id="restartButton" type="button">Volver a ver nuestra historia</button>
+        </section>
+      </div>
+
+      <div class="announcer" id="announcer" aria-live="polite"></div>
+    </main>
+  </body>
+</html>
