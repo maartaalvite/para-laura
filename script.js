@@ -4,6 +4,8 @@ const backButton = document.getElementById("backButton");
 const progressBar = document.getElementById("progressBar");
 const progressLabel = document.getElementById("progressLabel");
 const announcer = document.getElementById("announcer");
+const story = document.querySelector(".story");
+const storyHeader = document.querySelector(".story__header");
 const noButton = document.getElementById("noButton");
 const yesButton = document.getElementById("yesButton");
 const noMessage = document.getElementById("noMessage");
@@ -88,14 +90,30 @@ function moveNoButton(event) {
 
   const buttonWidth = noButton.offsetWidth || 120;
   const buttonHeight = noButton.offsetHeight || 54;
-  const margin = 14;
-  const headerGuard = Math.max(70, parseInt(getComputedStyle(document.documentElement).getPropertyValue("--safe-top"), 10) + 52 || 70);
+  const margin = 18;
+  const storyRect = story.getBoundingClientRect();
+  const headerRect = storyHeader.getBoundingClientRect();
+  const viewport = window.visualViewport;
+  const viewportLeft = viewport?.offsetLeft ?? 0;
+  const viewportTop = viewport?.offsetTop ?? 0;
+  const viewportRight = viewportLeft + (viewport?.width ?? window.innerWidth);
+  const viewportBottom = viewportTop + (viewport?.height ?? window.innerHeight);
+  const minX = Math.max(storyRect.left, viewportLeft) + margin;
+  const maxX = Math.max(
+    minX,
+    Math.min(storyRect.right, viewportRight) - buttonWidth - margin,
+  );
+  const minY = Math.max(storyRect.top + margin, viewportTop + margin, headerRect.bottom + 8);
+  const maxY = Math.max(
+    minY,
+    Math.min(storyRect.bottom, viewportBottom) - buttonHeight - margin,
+  );
   const yesRect = yesButton.getBoundingClientRect();
   let candidate;
 
   for (let attempt = 0; attempt < 24; attempt += 1) {
-    const x = margin + Math.random() * Math.max(1, window.innerWidth - buttonWidth - margin * 2);
-    const y = headerGuard + Math.random() * Math.max(1, window.innerHeight - buttonHeight - headerGuard - margin);
+    const x = minX + Math.random() * Math.max(0, maxX - minX);
+    const y = minY + Math.random() * Math.max(0, maxY - minY);
     candidate = { left: x, top: y, right: x + buttonWidth, bottom: y + buttonHeight };
     if (!rectanglesOverlap(candidate, yesRect, 24)) break;
   }
